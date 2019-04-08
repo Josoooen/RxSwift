@@ -1966,20 +1966,6 @@ final class SingleTest_ : SingleTest, RxTestCase {
     ] }
 }
 
-final class VariableTest_ : VariableTest, RxTestCase {
-    #if os(macOS)
-    required override init() {
-        super.init()
-    }
-    #endif
-
-    static var allTests: [(String, (VariableTest_) -> () -> Void)] { return [
-    ("testVariable_initialValues", VariableTest.testVariable_initialValues),
-    ("testVariable_sendsCompletedOnDealloc", VariableTest.testVariable_sendsCompletedOnDealloc),
-    ("testVariable_READMEExample", VariableTest.testVariable_READMEExample),
-    ] }
-}
-
 final class VirtualSchedulerTest_ : VirtualSchedulerTest, RxTestCase {
     #if os(macOS)
     required override init() {
@@ -2108,7 +2094,6 @@ func XCTMain(_ tests: [() -> Void]) {
         testCase(SharingSchedulerTest_.allTests),
         testCase(SignalTests_.allTests),
         testCase(SingleTest_.allTests),
-        testCase(VariableTest_.allTests),
         testCase(VirtualSchedulerTest_.allTests),
     ])
 //}
